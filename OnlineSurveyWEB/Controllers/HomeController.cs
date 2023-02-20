@@ -32,7 +32,7 @@ namespace OnlineSurveyWEB.Controllers
             return View();
         }
 
-        public async Task<JsonResult> GetDistrict()
+        public async Task<JsonResult> District()
         {
             string data = null;
             HttpResponseMessage response = client.GetAsync(client.BaseAddress + "/District").Result;
@@ -42,7 +42,7 @@ namespace OnlineSurveyWEB.Controllers
             }
             return Json(data);
         }
-        public async Task<JsonResult> GetBlockByDistId(int distId)
+        public async Task<JsonResult> Block(int distId)
         {
             string data = null;
             HttpResponseMessage response = client.GetAsync(client.BaseAddress + "/District/" + distId).Result;
@@ -52,7 +52,7 @@ namespace OnlineSurveyWEB.Controllers
             }
             return Json(data);
         }
-        public async Task<JsonResult> GetPanchayatByBlockId(int blockId)
+        public async Task<JsonResult> Panchayat(int blockId)
         {
             string data = null;
             HttpResponseMessage response = client.GetAsync(client.BaseAddress + "/Panchayat/" + blockId).Result;
@@ -62,7 +62,7 @@ namespace OnlineSurveyWEB.Controllers
             }
             return Json(data);
         }
-        public async Task<JsonResult> GetVillageByPanchayatId(int punchId)
+        public async Task<JsonResult> Village(int punchId)
         {
             string data = null;
             HttpResponseMessage response = client.GetAsync(client.BaseAddress + "/Survey/" + punchId).Result;
@@ -72,7 +72,7 @@ namespace OnlineSurveyWEB.Controllers
             }
             return Json(data);
         }
-        public async Task<JsonResult> GetInstitute()
+        public async Task<JsonResult> Institute()
         {
             string data = null;
             HttpResponseMessage response = client.GetAsync(client.BaseAddress + "/Survey").Result;
